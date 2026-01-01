@@ -2,14 +2,14 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   const increaseCount = () => {
-    setCount(++count);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const decreaseCount = () => {
-    if (count > 0) setCount(--count);
+    if (count > 0) setCount((prevCount) => prevCount - 1);
   };
 
   return (
