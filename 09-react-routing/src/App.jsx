@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
 import User from "./pages/User";
 import Dashboard from "./pages/Dashboard";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="profile/:id" element={<Profile />} />
           <Route path="users" element={<User />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
